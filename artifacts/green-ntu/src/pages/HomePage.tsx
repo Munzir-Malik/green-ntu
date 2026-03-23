@@ -44,7 +44,7 @@ export default function HomePage({ setPage, completed, unlockedTitle, currentTip
   return (
     <div className="page-content" dir="rtl">
       <div className="hero-section">
-        <div className="globe-icon" aria-label="globe with graduation cap">🌍🎓</div>
+        <img src="/logo.png" alt="الجامعة الخضراء | Green NTU" className="hero-logo" />
         <h1 className="app-title">الجامعة الخضراء | Green NTU</h1>
         <div className="typewriter-container">
           <p className="intro-text">{displayedText}<span className={typingDone ? "cursor-hidden" : "cursor"}>|</span></p>
