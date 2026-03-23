@@ -54,7 +54,7 @@ export default function HomePage({ setPage, completed, unlockedTitle, currentTip
         )}
       </div>
 
-      <div className="cards-row">
+      <div className="cards-row animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
         <div className="card tip-card">
           <div className="card-label">💡 نصيحة اليوم</div>
           <p className="tip-text">{TIPS[currentTipIndex]}</p>
@@ -77,7 +77,7 @@ export default function HomePage({ setPage, completed, unlockedTitle, currentTip
         </div>
       </div>
 
-      <div className="nav-buttons">
+      <div className="nav-buttons animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
         <button className="btn btn-primary nav-btn" onClick={() => setPage("tips")}>
           <span>📋</span> النصائح
         </button>

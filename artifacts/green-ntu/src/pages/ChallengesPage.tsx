@@ -36,7 +36,10 @@ export default function ChallengesPage({
 
       {challengeMessage && (
         <div className={`message-card ${challengeMessage.type === "success" ? "message-success" : "message-info"} animate-fade-in`}>
-          <p>{challengeMessage.text}</p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <span style={{ fontSize: '1.2rem' }}>{challengeMessage.type === "success" ? "🌿" : "💡"}</span>
+            <p>{challengeMessage.text}</p>
+          </div>
           <button className="msg-dismiss" onClick={dismissChallengeMessage}>✕</button>
         </div>
       )}

@@ -1,0 +1,49 @@
+Refine the existing UI of the Green NTU application while preserving the current structure, logic, content, and functionality.
+
+IMPORTANT CONSTRAINTS:
+- Do NOT change the app name.
+- Do NOT change any Arabic text content.
+- Do NOT change the number of pages/sections.
+- Do NOT change challenge logic, tip logic, localStorage behavior, or PWA functionality.
+- Do NOT replace the existing provided icons.
+- Keep the homepage icon, favicon, and PWA icon exactly as they are from the uploaded image.
+- Do NOT redesign the app into a complex or crowded interface.
+- Keep the style minimal, clean, and elegant.
+
+GOAL:
+Improve the overall visual design so the app looks more polished, modern, and balanced while keeping the same simple identity.
+
+UI IMPROVEMENTS TO APPLY:
+1. Make spacing, padding, and alignment more consistent across all screens.
+2. Improve typography hierarchy:
+   - stronger title styling
+   - cleaner subtitle styling
+   - more readable Arabic text
+3. Refine cards:
+   - softer shadows
+   - smoother rounded corners
+   - better separation between elements
+4. Refine buttons:
+   - more polished hover/press states
+   - consistent sizing
+   - modern but simple appearance
+5. Improve the progress counter and progress bar so they look more premium but still minimal.
+6. Make the page transitions feel smoother and more fluid.
+7. Improve the random tip card presentation on the homepage.
+8. Improve the challenge card presentation and the message banners.
+9. Improve the statistics page layout so it feels more structured and clear.
+10. Keep the green/blue theme, but make it more harmonious and visually calm.
+11. Make the UI fully responsive on mobile and desktop.
+12. Make sure RTL Arabic layout still looks natural and clean.
+
+ICON RULES:
+- Keep the uploaded globe-with-graduation-cap image as:
+  - homepage logo
+  - favicon
+  - PWA icon
+- Do not modify the icon design itself.
+- Only resize or optimize it if needed for display.
+
+OUTPUT:
+Update the existing project files directly with these UI improvements only.
+Preserve all existing functionality and PWA support.
