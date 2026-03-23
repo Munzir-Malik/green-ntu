@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ─── CSS Variables ───────────────────────────────────────── */
+:root {
+  --green-50:  #f0fdf4;
+  --green-100: #dcfce7;
+  --green-200: #bbf7d0;
+  --green-400: #4ade80;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --green-800: #166534;
+  --green-900: #14532d;
+
+  --blue-50:   #eff6ff;
+  --blue-100:  #dbeafe;
+  --blue-400:  #60a5fa;
+  --blue-500:  #3b82f6;
+  --blue-600:  #2563eb;
+
+  --teal-50:   #f0fdfa;
+  --teal-100:  #ccfbf1;
+  --teal-500:  #14b8a6;
+  --teal-600:  #0d9488;
+
+  --white:     #ffffff;
+  --gray-50:   #f8fafc;
+  --gray-100:  #f1f5f9;
+  --gray-200:  #e2e8f0;
+  --gray-300:  #cbd5e1;
+  --gray-400:  #94a3b8;
+  --gray-500:  #64748b;
+  --gray-600:  #475569;
+  --gray-700:  #334155;
+  --gray-800:  #1e293b;
+  --gray-900:  #0f172a;
+
+  --primary:   var(--green-600);
+  --primary-dark: var(--green-700);
+  --primary-light: var(--green-100);
+  --accent:    var(--teal-600);
+  --radius:    12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow:    0 4px 12px rgba(0,0,0,0.10);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  --nav-height: 68px;
+  --font-ar: 'Noto Sans Arabic', 'Inter', sans-serif;
+}
+
+/* ─── Reset & Base ────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-ar);
+  background: var(--green-50);
+  color: var(--gray-800);
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── App Shell ───────────────────────────────────────────── */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  position: relative;
+}
+
+.page-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: calc(var(--nav-height) + 12px);
+}
+
+/* ─── Page Content ────────────────────────────────────────── */
+.page-content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ─── Hero Section ────────────────────────────────────────── */
+.hero-section {
+  text-align: center;
+  padding: 28px 16px 20px;
+  background: linear-gradient(135deg, var(--green-700) 0%, var(--teal-600) 100%);
+  border-radius: var(--radius-lg);
+  color: white;
+  box-shadow: var(--shadow-lg);
+}
+
+.globe-icon {
+  font-size: 3rem;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 16px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.typewriter-container {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.92);
+  text-align: center;
+  max-width: 480px;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 0.8s infinite;
+  font-weight: 100;
+}
+.cursor-hidden { display: none; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.sub-text {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* ─── Cards ───────────────────────────────────────────────── */
+.cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 480px) {
+  .cards-row { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--green-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+/* ─── Tip Card ────────────────────────────────────────────── */
+.tip-card {
+  background: linear-gradient(135deg, var(--green-50) 0%, var(--teal-50) 100%);
+  border-color: var(--green-200);
+}
+
+.tip-text {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--gray-700);
+  margin-bottom: 12px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ─── Progress Card ───────────────────────────────────────── */
+.progress-card {
+  background: linear-gradient(135deg, var(--blue-50) 0%, var(--green-50) 100%);
+  border-color: var(--blue-100);
+}
+
+.progress-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--green-700);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
+
+.title-badge {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: var(--green-700);
+  background: var(--green-100);
+  border-radius: 999px;
+  padding: 4px 10px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+/* ─── Progress Bar ────────────────────────────────────────── */
+.progress-bar-wrap {
+  height: 8px;
+  background: var(--gray-200);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.progress-bar-wrap.large { height: 14px; }
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-500), var(--teal-500));
+  border-radius: 999px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 2px;
+}
+
+/* ─── Nav Buttons (Home) ──────────────────────────────────── */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  flex: 1;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* ─── Buttons ─────────────────────────────────────────────── */
+button { cursor: pointer; font-family: inherit; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--green-600), var(--teal-600));
+  color: white;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3);
+}
+.btn-primary:hover { background: linear-gradient(135deg, var(--green-700), var(--teal-600)); box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4); }
+
+.btn-secondary {
+  background: var(--green-100);
+  color: var(--green-800);
+  border: 1px solid var(--green-200);
+}
+.btn-secondary:hover { background: var(--green-200); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--gray-500);
+  border: 1px solid var(--gray-200);
+}
+.btn-ghost:hover { background: var(--gray-100); color: var(--gray-700); }
+
+.btn-success {
+  background: var(--green-600);
+  color: white;
+}
+
+.btn-accept {
+  background: linear-gradient(135deg, var(--green-600), var(--green-500));
+  color: white;
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 14px;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(22, 163, 74, 0.3);
+}
+.btn-accept:hover { background: linear-gradient(135deg, var(--green-700), var(--green-600)); }
+
+.btn-refuse {
+  background: var(--gray-100);
+  color: var(--gray-600);
+  border: 1px solid var(--gray-200);
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 14px;
+  font-size: 1rem;
+}
+.btn-refuse:hover { background: var(--gray-200); }
+
+/* ─── Page Header ─────────────────────────────────────────── */
+.page-header {
+  padding: 4px 0 8px;
+}
+
+.page-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin: 6px 0 4px;
+}
+
+.page-subtitle {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+}
+
+.back-btn {
+  margin-bottom: 4px;
+  font-size: 0.82rem;
+}
+
+/* ─── Tips Grid ───────────────────────────────────────────── */
+.tips-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .tips-grid { grid-template-columns: 1fr; }
+}
+
+.tip-card-item {
+  background: white;
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.tip-card-item:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.tip-number {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--green-600);
+  background: var(--green-50);
+  padding: 2px 8px;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
+.copy-btn {
+  align-self: flex-end;
+  margin-top: auto;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+}
+
+/* ─── Challenge Page ──────────────────────────────────────── */
+.challenge-progress-section {
+  background: white;
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+}
+
+.progress-counter {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--green-700);
+  text-align: center;
+  margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.challenge-card {
+  border: 2px solid var(--green-200);
+  background: linear-gradient(135deg, white 0%, var(--green-50) 100%);
+}
+
+.challenge-number {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--green-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.challenge-text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--gray-800);
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+.challenge-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* ─── Message Cards ───────────────────────────────────────── */
+.message-card {
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.message-success {
+  background: var(--green-100);
+  border: 1px solid var(--green-300);
+  color: var(--green-800);
+}
+
+.message-info {
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  color: var(--blue-600);
+}
+
+.msg-dismiss {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.6;
+  font-size: 1rem;
+  flex-shrink: 0;
+  padding: 0 4px;
+}
+.msg-dismiss:hover { opacity: 1; }
+
+/* ─── Done Card ───────────────────────────────────────────── */
+.done-card {
+  text-align: center;
+  padding: 32px 20px;
+  background: linear-gradient(135deg, var(--green-50), var(--teal-50));
+  border: 2px solid var(--green-300);
+}
+
+.done-icon { font-size: 3rem; margin-bottom: 12px; }
+.done-title { font-size: 1.3rem; font-weight: 700; color: var(--green-800); margin-bottom: 8px; }
+.done-text { font-size: 0.9rem; color: var(--gray-600); margin-bottom: 16px; line-height: 1.6; }
+
+/* ─── Challenges History ──────────────────────────────────── */
+.challenges-history {
+  background: white;
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+}
+
+.history-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin-bottom: 12px;
+}
+
+.challenges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-left: 4px;
+}
+
+.challenges-list::-webkit-scrollbar { width: 4px; }
+.challenges-list::-webkit-scrollbar-track { background: var(--gray-100); border-radius: 2px; }
+.challenges-list::-webkit-scrollbar-thumb { background: var(--green-300); border-radius: 2px; }
+
+.challenge-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: background 0.15s ease;
+}
+
+.challenge-done { background: var(--green-50); color: var(--green-700); }
+.challenge-current { background: var(--blue-50); color: var(--gray-800); border: 1px solid var(--blue-100); font-weight: 600; }
+.challenge-locked { color: var(--gray-400); }
+
+.challenge-item-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  min-width: 22px;
+  flex-shrink: 0;
+}
+
+.challenge-item-text { line-height: 1.5; }
+
+/* ─── Stats Page ──────────────────────────────────────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 400px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.stat-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 16px 12px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+  text-align: center;
+}
+
+.stat-icon { font-size: 1.6rem; margin-bottom: 6px; }
+.stat-value { font-size: 2rem; font-weight: 700; color: var(--green-700); line-height: 1; margin-bottom: 4px; }
+.stat-desc { font-size: 0.78rem; color: var(--gray-500); }
+
+.progress-summary-card { text-align: center; }
+.big-progress-counter { font-size: 2.5rem; font-weight: 700; color: var(--green-700); margin: 8px 0; }
+.progress-percent { font-size: 0.85rem; color: var(--gray-500); margin-top: 6px; }
+
+.title-card { text-align: center; }
+.current-title-display {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-700);
+  padding: 12px;
+  background: var(--green-50);
+  border-radius: 10px;
+  margin-top: 6px;
+}
+
+.titles-section {
+  background: white;
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-100);
+}
+
+.section-title { font-size: 0.9rem; font-weight: 700; color: var(--gray-700); margin-bottom: 12px; }
+
+.titles-list { display: flex; flex-direction: column; gap: 10px; }
+
+.title-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.title-unlocked { background: var(--green-50); border: 1px solid var(--green-200); }
+.title-locked { background: var(--gray-50); border: 1px solid var(--gray-200); }
+
+.title-status { font-size: 1.3rem; flex-shrink: 0; }
+.title-name { font-size: 0.9rem; font-weight: 700; color: var(--gray-800); }
+.title-req { font-size: 0.75rem; color: var(--gray-400); margin-top: 2px; }
+
+/* ─── Bottom Navbar ───────────────────────────────────────── */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: white;
+  border-top: 1px solid var(--gray-200);
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+  z-index: 100;
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+  color: var(--gray-400);
+  border-radius: 0;
+  padding: 8px 4px;
+}
+
+.nav-item:hover { color: var(--green-600); background: var(--green-50); }
+.nav-item-active { color: var(--green-700) !important; background: var(--green-50); }
+
+.nav-icon { font-size: 1.2rem; }
+.nav-label { font-size: 0.68rem; font-weight: 600; }
+
+/* ─── Modal ───────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-confetti { font-size: 2.5rem; margin-bottom: 12px; }
+.modal-title { font-size: 1.1rem; font-weight: 700; color: var(--green-800); margin-bottom: 10px; line-height: 1.4; }
+.modal-motivation { font-size: 0.88rem; color: var(--gray-600); line-height: 1.7; margin-bottom: 20px; }
+.modal-close-btn { width: 100%; }
+
+/* ─── Animations ──────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in { animation: fadeIn 0.35s ease both; }
+.animate-fade-in-up { animation: fadeInUp 0.4s ease both; }
+.animate-scale-in { animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+
+/* ─── Scrollbar (page) ────────────────────────────────────── */
+.page-container::-webkit-scrollbar { width: 5px; }
+.page-container::-webkit-scrollbar-track { background: transparent; }
+.page-container::-webkit-scrollbar-thumb { background: var(--green-200); border-radius: 3px; }

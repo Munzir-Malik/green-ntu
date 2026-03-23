@@ -16,6 +16,18 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+### `artifacts/green-ntu` (`@workspace/green-ntu`)
+
+A bilingual (Arabic/English) PWA — **الجامعة الخضراء | Green NTU** — for environmental awareness at university. Fully frontend-only React + Vite app.
+
+- Pages: Home (typewriter effect, random tip, progress summary), Tips (30 shuffled tips with copy), Challenges (30 sequential), Statistics
+- localStorage persistence: completed challenges, current challenge index, unlocked titles, last tip shown
+- PWA: manifest.json, service worker (offline caching), installable, Arabic RTL
+- Title system: 3 Arabic titles unlocked at 10/20/30 challenges
+- No backend — all state in localStorage
+
 ## Structure
 
 ```text

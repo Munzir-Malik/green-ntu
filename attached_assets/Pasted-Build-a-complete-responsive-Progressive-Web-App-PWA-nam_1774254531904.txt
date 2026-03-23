@@ -1,0 +1,245 @@
+Build a complete responsive Progressive Web App (PWA) named:
+
+الجامعة الخضراء | Green NTU
+
+This is a simple, elegant, interactive environmental awareness web app for a university event. It must be built using ONLY frontend technologies: HTML, CSS, and vanilla JavaScript. No backend, no database, no login system, no framework, and no external APIs.
+
+The app should be fully functional in the browser and installable as a PWA.
+
+GOAL
+Create a clean and attractive bilingual university web app that encourages environmental responsibility through:
+- a homepage with a typewriter intro effect
+- 30 environmental tips
+- 30 sequential environmental challenges
+- a progress counter
+- 3 Arabic motivational titles
+- saved progress using localStorage
+- full PWA support for installability and offline usage
+
+DESIGN REQUIREMENTS
+- Use a modern calm theme with green and blue tones only, plus white and very light backgrounds.
+- Make the design polished, minimal, and university-friendly.
+- Use rounded cards, rounded buttons, soft shadows, and smooth transitions.
+- The app should feel interactive and refined.
+- Use RTL layout for Arabic content.
+- Keep the UI mobile-first and fully responsive.
+- Use a very simple favicon/app icon: a globe wearing a university graduation cap. Keep the icon minimal and clean.
+- Add subtle animation effects for page transitions and button interactions.
+- On the homepage, use a typewriter animation for the intro text.
+
+APP NAME
+The app name must be shown exactly as:
+الجامعة الخضراء | Green NTU
+
+APP STRUCTURE
+The app must contain 4 simple pages/sections:
+1. Home
+2. Tips
+3. Challenges
+4. Statistics
+
+Navigation between pages should feel smooth and interactive, even if implemented as a single-page app using hidden sections.
+
+PERSISTENCE
+Use localStorage to save:
+- current challenge index
+- completed challenges count
+- unlocked title
+- unlocked title count
+- last shown random tip
+- current progress state
+
+When the user closes the browser and returns later, the progress must remain.
+
+HOMEPAGE
+- Show the app title: الجامعة الخضراء | Green NTU
+- Under the title, show this Arabic intro text with a typewriter effect:
+  "هذا التطبيق يساعد طلبة الجامعة على تبني عادات بيئية بسيطة، وتحويل السلوك اليومي إلى خطوة عملية نحو بيئة جامعية أنظف وأكثر استدامة."
+- Under that, show this smaller supportive line exactly:
+  "ابدأ الآن، وساهم في جعل بيئتنا الجامعية أجمل."
+- Show one random tip in a clean card.
+- Add a button labeled "نصيحة جديدة" that shows another random tip.
+- Avoid repeating the same tip immediately if possible.
+- Show a small progress summary card with:
+  - completed challenges count
+  - current title
+- Add navigation buttons to:
+  - النصائح
+  - التحديات
+  - الإحصائيات
+
+TIPS PAGE
+- Show 30 environmental tips in card format.
+- The tips must appear in random order each time the page is opened or refreshed.
+- Each tip card must contain only one button: "نسخ"
+- Clicking the copy button should copy the Arabic tip text to the clipboard.
+- Do not include a share button.
+
+Use these 30 tips exactly:
+
+1. بيئتنا في الجامعة أمانة، فاحرص على ترك المكان أنظف مما وجدته.
+2. في جامعتنا، إطفاء الضوء عند عدم الحاجة خطوة صغيرة لكنها مؤثرة.
+3. الماء في بيئتنا نعمة، فلا تتركه يهدر بلا فائدة.
+4. مسؤوليتنا تجاه جامعتنا تبدأ من عدم رمي النفايات في غير مكانها.
+5. حين نحافظ على الورق، فنحن نحافظ على بيئتنا ومواردها.
+6. بيئتنا تحتاج إلى سلوك واعٍ، لا إلى عادات تهدر الطاقة.
+7. في جامعتنا، إعادة الاستخدام أفضل من الاستهلاك السريع.
+8. مسؤوليتنا أن نختار العادة التي تحمي بيئتنا بدلًا من أن تضرها.
+9. نظافة جامعتنا تعكس وعي الطلبة واحترامهم للبيئة.
+10. كل قطرة ماء نوفرها هي خدمة حقيقية لبيئتنا.
+11. في بيئتنا الجامعية، التقليل من البلاستيك خطوة ذكية ومهمة.
+12. جامعتنا تصبح أجمل عندما نتصرف بوعي ونحافظ على نظافتها.
+13. المسؤولية البيئية تبدأ من تفاصيل صغيرة في حياتنا اليومية.
+14. حين نحسن استخدام الموارد، فنحن نحمي بيئتنا للأيام القادمة.
+15. بيئتنا تستحق منا سلوكًا بسيطًا لكنه ثابت كل يوم.
+16. احمل زجاجة ماء قابلة لإعادة الاستخدام بدل شراء واحدة جديدة كل مرة.
+17. أطفئ الشاحن من الكهرباء بعد انتهاء الشحن لتقليل الهدر.
+18. استخدم ضوء النهار قدر الإمكان قبل تشغيل الإضاءة.
+19. لا تطبع أي ملف إلا إذا كنت بحاجة فعلية إليه.
+20. رتّب أوراقك الرقمية حتى تقل حاجتك إلى الورق.
+21. اختر حقيبة أو صندوقًا يمكن استخدامه أكثر من مرة.
+22. قلل استخدام الأكواب والأدوات ذات الاستعمال الواحد.
+23. افصل النفايات القابلة للتدوير إذا وجدت الحاويات المناسبة.
+24. اقرأ الملصقات قبل الشراء واختر ما هو أقل ضررًا للبيئة.
+25. أغلق الصنبور جيدًا بعد الاستخدام ولا تترك الماء يسيل.
+26. استعمل الملاحظات الرقمية بدل الأوراق عندما يكون ذلك ممكنًا.
+27. شارك نصيحة بيئية مع صديق واحد على الأقل اليوم.
+28. حافظ على المساحة حولك نظيفة، سواء في القاعة أو في البيت.
+29. اختر المشي لمسافة قصيرة بدل استخدام وسيلة غير ضرورية.
+30. اجعل سلوكك البيئي عادة يومية، لا مجرد فكرة مؤقتة.
+
+CHALLENGES PAGE
+- Show 30 challenges in a fixed sequential order from easiest to hardest.
+- The user must complete them in order.
+- Do not allow skipping ahead.
+- Replace any points system with a rounded rectangular progress counter showing progress like:
+  12 / 30
+- Show a progress bar that fills from left to right.
+- When the user accepts a challenge:
+  - mark it as completed
+  - move to the next challenge
+  - show a positive encouragement message
+- When the user refuses a challenge:
+  - show a polite motivational message
+  - keep the same challenge visible
+- No repeated challenge texts.
+- Challenges must be direct, clear, and unambiguous.
+
+Use these 30 challenges exactly:
+
+1. احمل زجاجة ماء قابلة لإعادة الاستخدام اليوم.
+2. أطفئ الأنوار عند مغادرة الغرفة.
+3. أغلق صنبور الماء جيدًا بعد الاستخدام.
+4. ضع أي نفايات في السلة المناسبة فورًا.
+5. قلل استخدام المناديل الورقية اليوم.
+6. استخدم ورقة واحدة فقط إذا كانت تكفيك.
+7. افصل الشاحن من الكهرباء بعد انتهاء الشحن.
+8. احتفظ بالملفات على هاتفك بدل طباعتها إذا لم تكن بحاجة إلى الورق.
+9. رتّب مكانك وأزل أي نفايات صغيرة منه.
+10. شارك نصيحة بيئية واحدة مع زميل أو صديق.
+11. استخدم الكوب نفسه أكثر من مرة خلال اليوم.
+12. امشِ لمسافة قصيرة بدل استخدام وسيلة غير ضرورية.
+13. لا تطبع أي ملف إلا إذا كان ضروريًا فعلًا.
+14. استفد من الضوء الطبيعي أطول وقت ممكن.
+15. افصل الأشياء القابلة لإعادة التدوير إذا وجدت مكانًا مناسبًا لها.
+16. أعد استخدام قلم أو دفتر قديم بدل شراء جديد مباشرة.
+17. قلل استخدام الأكياس ذات الاستعمال الواحد اليوم.
+18. التقط مخلفًا صغيرًا واحدًا من المكان الذي تجلس فيه.
+19. خفف استهلاك الكهرباء في مكانك قدر الإمكان.
+20. اكتب جملة قصيرة عن أهمية بيئتنا واحتفظ بها أو شاركها.
+21. اختر وجبة أو مشروبًا لا يعتمد على تغليف زائد.
+22. امتنع اليوم عن شراء أي شيء غير ضروري.
+23. حافظ على نظافة مكانك طوال اليوم دون تأجيل.
+24. راقب استخدامك للماء اليوم وحاول أن تجعله أقل من المعتاد.
+25. أوقف تشغيل الأجهزة غير الضرورية عندما لا تحتاجها.
+26. رتب أوراقك وملفاتك بطريقة تقلل الفوضى والهدر.
+27. نفذ سلوكًا بيئيًا مرة أخرى اليوم من تلقاء نفسك دون تذكير.
+28. شجع شخصًا واحدًا على تبني عادة صديقة للبيئة.
+29. نفذ ثلاث عادات خضراء مختلفة في نفس اليوم.
+30. اقضِ يومك بوعي بيئي كامل وأثبت لنفسك أن الاستدامة ممكنة.
+
+TITLE SYSTEM
+The app must unlock exactly these Arabic titles:
+- After 10 completed challenges: الشرارة الخضراء ⚡🌿
+- After 20 completed challenges: الحارس الأخضر 🛡️🌿
+- After 30 completed challenges: الأسطورة الخضراء 🏆🌿
+
+When a title is unlocked, show a message like:
+- "مبروك! أنت الآن: الشرارة الخضراء ⚡🌿"
+- Add a short motivational sentence related to the title.
+Use the same style for the other two titles.
+
+STATISTICS PAGE
+- Show:
+  - completed challenges count
+  - remaining challenges count
+  - current title
+  - unlocked titles count
+  - a progress bar from 0 to 30
+- Show a clean summary card of progress.
+- Show which title has been unlocked and how many of the 3 titles the user has reached.
+- Keep the page visually consistent with the rest of the app.
+
+BEHAVIOR REQUIREMENTS
+- Use only vanilla JavaScript.
+- No frameworks such as React, Vue, or Angular.
+- No backend code.
+- Keep the code organized and readable.
+- Use reusable arrays or objects for tips and challenges.
+- Prevent the same random tip from appearing twice in a row if possible.
+- Make all text inside the application Arabic, except the bilingual app name.
+- Keep the interface elegant, smooth, and simple.
+
+PWA REQUIREMENTS
+Convert the application into a fully working Progressive Web App (PWA).
+
+The app must include:
+
+1. manifest.json
+- name: الجامعة الخضراء | Green NTU
+- short_name: Green NTU
+- start_url: .
+- display: standalone
+- background_color: #ffffff
+- theme_color: #2E7D32
+- include app icons in 192x192 and 512x512 sizes
+- the manifest must be valid and linked properly in HTML
+
+2. Service Worker
+- Create and register a service worker
+- Cache the core app files: HTML, CSS, JavaScript, manifest, and icons
+- Enable offline usage after the first load
+- Make sure the service worker activates correctly and updates when files change
+
+3. Installability
+- The app should be installable on mobile and desktop
+- Support Add to Home Screen behavior
+- Add basic install prompt handling if possible
+- Show an install button or install notice only if supported by the browser
+
+4. Offline Support
+- If the user opens the app without internet after the first load, the app should still open and show cached content
+- The UI should remain functional offline for the main screens
+
+5. Best Practices
+- Use HTTPS-compatible PWA structure
+- Ensure the manifest and service worker paths are correct
+- Make the app behave like a real installable standalone web app
+
+ASSET / ICON REQUIREMENTS
+- Create or use a very simple minimal favicon/app icon:
+  a globe wearing a university graduation cap
+- Keep the icon very simple and readable at small sizes
+- Use it for the favicon and PWA icons if possible
+- If needed, create a clean SVG-based version as part of the project
+
+DELIVERABLE
+Generate the complete project with all necessary files and working functionality:
+- index.html
+- style.css
+- script.js
+- manifest.json
+- service worker file
+- icon assets or SVG equivalent
+
+The final result should run correctly in the browser, look polished, be fully functional, and be ready to deploy and test on Replit as a PWA.
