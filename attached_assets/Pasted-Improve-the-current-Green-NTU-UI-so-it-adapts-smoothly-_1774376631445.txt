@@ -1,0 +1,52 @@
+Improve the current Green NTU UI so it adapts smoothly to the device being used: mobile, tablet, or desktop.
+
+GOAL
+Make the app fully responsive and visually balanced on all screen sizes while preserving the current simple and elegant identity.
+
+IMPORTANT CONSTRAINTS
+- Do NOT change the app name.
+- Do NOT change any Arabic text content.
+- Do NOT change the app logic, challenge flow, tip logic, localStorage, or PWA behavior.
+- Do NOT replace the existing provided icons.
+- Keep the homepage logo, favicon, and PWA icon exactly as they are.
+- Keep the design minimal, clean, and university-friendly.
+
+RESPONSIVE DESIGN REQUIREMENTS
+1. Mobile layout:
+- Keep the current stacked layout.
+- Make buttons large and touch-friendly.
+- Keep spacing comfortable and readable.
+- Preserve the simple vertical flow.
+
+2. Tablet layout:
+- Use a slightly wider and more structured layout.
+- Cards can appear in 2 columns where appropriate.
+- Keep the interface airy and well balanced.
+- Avoid making the content look stretched or crowded.
+
+3. Desktop layout:
+- Make the content centered with a clean max-width.
+- Use more horizontal space intelligently.
+- Show related sections in a grid or two-column layout when appropriate.
+- Reduce the feeling that the app is only made for phones.
+- Make the homepage, tips, challenges, and statistics look polished on large screens.
+
+UI IMPROVEMENTS
+- Use media queries for different breakpoints.
+- Improve spacing, padding, and alignment across all screen sizes.
+- Refine typography so Arabic text looks readable and elegant on all devices.
+- Keep cards, buttons, progress bars, and messages visually consistent.
+- Use smoother transitions and cleaner section spacing.
+- Make the statistics page more structured on larger screens.
+- Make the tips page and challenges page feel more organized on desktop.
+- Keep the green and blue theme, but make it calm and balanced.
+- Ensure RTL layout remains correct and natural on all devices.
+
+BEHAVIOR
+- Preserve all current app functionality.
+- Do not break the current PWA setup.
+- Do not alter the content or data arrays unless needed for layout compatibility.
+- The app should feel like one product with adaptive layout, not separate versions.
+
+OUTPUT
+Update the existing project to be fully responsive and device-aware, with the same content and logic, but a much better presentation on mobile, tablet, and desktop.
