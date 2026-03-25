@@ -38,18 +38,20 @@ export default function StatsPage({ setPage, completed, unlockedTitle, unlockedC
         </div>
       </div>
 
-      <div className="card progress-summary-card animate-fade-in">
-        <div className="card-label">التقدم الكلي</div>
-        <div className="big-progress-counter">{completed} / {CHALLENGES.length}</div>
-        <div className="progress-bar-wrap large">
-          <div className="progress-bar" style={{ width: `${progressPercent}%` }} />
+      <div className="stats-detail-row">
+        <div className="card progress-summary-card animate-fade-in">
+          <div className="card-label">التقدم الكلي</div>
+          <div className="big-progress-counter">{completed} / {CHALLENGES.length}</div>
+          <div className="progress-bar-wrap large">
+            <div className="progress-bar" style={{ width: `${progressPercent}%` }} />
+          </div>
+          <div className="progress-percent">{Math.round(progressPercent)}%</div>
         </div>
-        <div className="progress-percent">{Math.round(progressPercent)}%</div>
-      </div>
 
-      <div className="card title-card animate-fade-in">
-        <div className="card-label">لقبك الحالي</div>
-        <div className="current-title-display">{unlockedTitle}</div>
+        <div className="card title-card animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <div className="card-label">لقبك الحالي</div>
+          <div className="current-title-display">{unlockedTitle}</div>
+        </div>
       </div>
 
       <div className="titles-section">

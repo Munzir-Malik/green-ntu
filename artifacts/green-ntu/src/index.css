@@ -869,3 +869,297 @@ button { cursor: pointer; font-family: inherit; }
 .page-container::-webkit-scrollbar-track { background: transparent; }
 .page-container::-webkit-scrollbar-thumb { background: var(--gray-200); border-radius: 3px; }
 .page-container::-webkit-scrollbar-thumb:hover { background: var(--gray-300); }
+
+/* ─── Challenges Desktop Layout (default: stacked) ───────── */
+.challenges-desktop-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.challenges-main-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── Stats Detail Row (default: stacked) ─────────────────── */
+.stats-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ══════════════════════════════════════════════════════════ */
+/* TABLET  ≥ 640px                                          */
+/* ══════════════════════════════════════════════════════════ */
+@media (min-width: 640px) {
+  .page-content {
+    max-width: 720px;
+    padding: 28px 24px;
+    gap: 28px;
+  }
+
+  .hero-section {
+    padding: 48px 32px 40px;
+  }
+
+  .hero-logo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+  }
+
+  .tips-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stats-grid {
+    gap: 20px;
+  }
+
+  .stat-card {
+    padding: 24px 20px;
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
+  }
+
+  .nav-buttons {
+    gap: 20px;
+  }
+
+  .nav-btn {
+    min-width: 130px;
+    height: 48px;
+    font-size: 1rem;
+  }
+
+  .challenge-text {
+    font-size: 1.4rem;
+  }
+
+  .challenges-list {
+    max-height: 500px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════ */
+/* DESKTOP  ≥ 1024px                                        */
+/* ══════════════════════════════════════════════════════════ */
+@media (min-width: 1024px) {
+  /* ── Layout & Shell ─────────────────────────────────────── */
+  .page-content {
+    max-width: 1000px;
+    padding: 36px 40px;
+    gap: 32px;
+  }
+
+  /* ── Hero ──────────────────────────────────────────────── */
+  .hero-section {
+    padding: 56px 48px 48px;
+    border-radius: 28px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+    align-items: start;
+    column-gap: 40px;
+    text-align: right;
+  }
+
+  .hero-logo {
+    width: 120px;
+    height: 120px;
+    margin: 0;
+    grid-row: 1 / 4;
+    align-self: center;
+  }
+
+  .app-title {
+    font-size: 2.25rem;
+    text-align: right;
+    margin-bottom: 8px;
+    align-self: end;
+  }
+
+  .typewriter-container {
+    min-height: unset;
+    justify-content: flex-start;
+    text-align: right;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+    text-align: right;
+    max-width: 600px;
+  }
+
+  .sub-text {
+    text-align: right;
+  }
+
+  /* ── Homepage Cards Row ────────────────────────────────── */
+  .cards-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* ── Homepage Nav Buttons ──────────────────────────────── */
+  .nav-buttons {
+    gap: 20px;
+  }
+
+  .nav-btn {
+    height: 52px;
+    font-size: 1.05rem;
+  }
+
+  /* ── Page Header ───────────────────────────────────────── */
+  .page-title {
+    font-size: 2rem;
+  }
+
+  /* ── Tips Page ─────────────────────────────────────────── */
+  .tips-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .tip-card-item {
+    padding: 22px;
+  }
+
+  /* ── Challenges Page — Side-by-Side ────────────────────── */
+  .challenges-desktop-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .challenges-main-col {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .challenges-history {
+    width: 340px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 24px;
+    max-height: calc(100dvh - var(--nav-height) - 80px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .challenges-list {
+    max-height: unset;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .challenge-text {
+    font-size: 1.5rem;
+  }
+
+  .challenge-card {
+    padding: 40px 32px;
+  }
+
+  /* ── Stats Page — Two-column detail row ────────────────── */
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .stat-card {
+    padding: 28px 20px;
+  }
+
+  .stat-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 2rem;
+  }
+
+  .stat-value {
+    font-size: 3rem;
+  }
+
+  .stats-detail-row {
+    flex-direction: row;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .stats-detail-row .card {
+    flex: 1;
+  }
+
+  .big-progress-counter {
+    font-size: 3.5rem;
+  }
+
+  .titles-section {
+    padding: 28px 32px;
+  }
+
+  .titles-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .title-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  /* ── Bottom Nav on Desktop ─────────────────────────────── */
+  .bottom-nav {
+    max-width: 600px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    border-radius: 20px 20px 0 0;
+    border-left: 1px solid var(--gray-200);
+    border-right: 1px solid var(--gray-200);
+  }
+
+  .nav-label {
+    font-size: 0.8rem;
+  }
+
+  .nav-icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════ */
+/* LARGE DESKTOP  ≥ 1280px                                  */
+/* ══════════════════════════════════════════════════════════ */
+@media (min-width: 1280px) {
+  .page-content {
+    max-width: 1100px;
+    padding: 40px 48px;
+  }
+
+  .challenges-history {
+    width: 380px;
+  }
+
+  .tips-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
