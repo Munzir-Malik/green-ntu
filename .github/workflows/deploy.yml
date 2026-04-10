@@ -4,30 +4,34 @@ on:
   push:
     branches: [master]
 
+permissions:
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
 
       - run: pnpm install
-      - run: pnpm build
+      - run: pnpm --filter @workspace/green-ntu build
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist   # or build/
+          path: artifacts/green-ntu/dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-
     steps:
       - uses: actions/deploy-pages@v4
