@@ -24,7 +24,7 @@ export default function ChallengesPage({
       <div className="page-header">
         <button className="btn btn-ghost back-btn" onClick={() => setPage("home")}>← رجوع</button>
         <h2 className="page-title">🎯 التحديات البيئية</h2>
-        <p className="page-subtitle">أكمل التحديات بالترتيب لتفتح ألقابك الخضراء</p>
+        <p className="page-subtitle">أكمل التحديات بالترتيب لتفتح ألقابك الخضراء، نرجوا أن تكون صادقا في اكمال التحديات</p>
       </div>
 
       <div className="challenges-desktop-layout">

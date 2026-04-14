@@ -34,7 +34,7 @@ export default function StatsPage({ setPage, completed, unlockedTitle, unlockedC
         <div className="stat-card animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           <div className="stat-icon">🏅</div>
           <div className="stat-value">{unlockedCount}</div>
-          <div className="stat-desc">لقب مفتوح من ٣</div>
+          <div className="stat-desc">لقب مفتوح من 3</div>
         </div>
       </div>
 
