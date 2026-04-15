@@ -348,7 +348,7 @@ button { cursor: pointer; font-family: inherit; }
   box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
 }
 .btn-primary:hover { 
-  background: linear-gradient(135deg, var(--green-700), var(--teal-700)); 
+  /* background: linear-gradient(135deg, var(--green-700), var(--teal-700));  */
   box-shadow: 0 6px 16px rgba(22, 163, 74, 0.35); 
   transform: translateY(-1px);
 }
@@ -359,7 +359,7 @@ button { cursor: pointer; font-family: inherit; }
   border: 1px solid var(--green-200);
 }
 .btn-secondary:hover { 
-  background: var(--green-200); 
+  background: var(--green-300); 
 }
 
 .btn-ghost {
@@ -368,9 +368,9 @@ button { cursor: pointer; font-family: inherit; }
   border: 1px solid var(--gray-200);
 }
 .btn-ghost:hover { 
-  background: var(--gray-50); 
+  background: var(--green-50);
   color: var(--gray-800); 
-  border-color: var(--gray-300);
+  border-color: var(--green-200);
 }
 
 .btn-success {
@@ -404,9 +404,9 @@ button { cursor: pointer; font-family: inherit; }
   font-size: 1.05rem;
 }
 .btn-refuse:hover { 
-  background: var(--gray-50); 
+  background: var(--green-50); 
   color: var(--gray-800);
-  border-color: var(--gray-300);
+  border-color: var(--green-200);
 }
 
 /* ─── Page Header ─────────────────────────────────────────── */
@@ -460,7 +460,7 @@ button { cursor: pointer; font-family: inherit; }
 }
 
 .tip-card-item:hover {
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
   transform: translateY(-2px);
 }
 
@@ -598,7 +598,7 @@ button { cursor: pointer; font-family: inherit; }
   flex-shrink: 0;
   transition: all 0.2s ease;
 }
-.msg-dismiss:hover { background: rgba(0,0,0,0.05); }
+.msg-dismiss:hover { background: var(--green-50); }
 
 /* ─── Done Card ───────────────────────────────────────────── */
 .done-card {

@@ -58,7 +58,7 @@ export default function ChallengesPage({
               <div className="challenge-number">التحدي #{challengeIndex + 1}</div>
               <p className="challenge-text">{currentChallenge}</p>
               <div className="challenge-actions">
-                <button className="btn btn-accept" onClick={acceptChallenge}>قبلت التحدي ✓</button>
+                <button className="btn btn-accept" onClick={acceptChallenge}>أكملت التحدي✓</button>
                 <button className="btn btn-refuse" onClick={refuseChallenge}>لاحقًا ↩</button>
               </div>
             </div>
