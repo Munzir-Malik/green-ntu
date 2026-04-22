@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import {
   getCompleted, setCompleted,
   getChallengeIndex, setChallengeIndex,
+  getChallengeOrder, setChallengeOrder,
   getUnlockedTitle, setUnlockedTitle,
   getUnlockedCount, setUnlockedCount,
   getLastTip, setLastTip,
@@ -20,6 +21,7 @@ export function useAppState() {
   const [page, setPage] = useState<Page>("home");
   const [completed, setCompletedState] = useState(() => getCompleted());
   const [challengeIndex, setChallengeIndexState] = useState(() => getChallengeIndex());
+  const [challengeOrder, setChallengeOrderState] = useState(() => getChallengeOrder(CHALLENGES.length));
   const [unlockedTitle, setUnlockedTitleState] = useState(() => getUnlockedTitle());
   const [unlockedCount, setUnlockedCountState] = useState(() => getUnlockedCount());
   const [currentTipIndex, setCurrentTipIndex] = useState(() => {
@@ -63,8 +65,16 @@ export function useAppState() {
   }, [completed, challengeIndex, unlockedCount]);
 
   const refuseChallenge = useCallback(() => {
+    const remaining = CHALLENGES.length - challengeIndex;
+    if (remaining > 1) {
+      const newOrder = [...challengeOrder];
+      const [postponed] = newOrder.splice(challengeIndex, 1);
+      newOrder.push(postponed);
+      setChallengeOrder(newOrder);
+      setChallengeOrderState(newOrder);
+    }
     setChallengeMessage({ text: "لا بأس! كل يوم فرصة جديدة. ستستطيع قبول هذا التحدي قريبًا. 💪", type: "info" });
-  }, []);
+  }, [challengeIndex, challengeOrder]);
 
   const dismissTitleUnlock = useCallback(() => {
     setTitleUnlock(null);
@@ -76,11 +86,11 @@ export function useAppState() {
 
   const remaining = CHALLENGES.length - completed;
   const isDone = challengeIndex >= CHALLENGES.length;
-  const currentChallenge = isDone ? null : CHALLENGES[challengeIndex];
+  const currentChallenge = isDone ? null : CHALLENGES[challengeOrder[challengeIndex]];
 
   return {
     page, setPage,
-    completed, challengeIndex,
+    completed, challengeIndex, challengeOrder,
     unlockedTitle, unlockedCount,
     currentTipIndex, getRandomTip,
     titleUnlock, dismissTitleUnlock,
