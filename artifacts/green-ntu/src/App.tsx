@@ -29,6 +29,7 @@ function App() {
             setPage={state.setPage}
             completed={state.completed}
             challengeIndex={state.challengeIndex}
+            challengeOrder={state.challengeOrder}
             currentChallenge={state.currentChallenge}
             isDone={state.isDone}
             acceptChallenge={state.acceptChallenge}

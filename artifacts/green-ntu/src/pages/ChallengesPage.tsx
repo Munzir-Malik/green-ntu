@@ -5,6 +5,7 @@ interface ChallengesPageProps {
   setPage: (page: Page) => void;
   completed: number;
   challengeIndex: number;
+  challengeOrder: number[];
   currentChallenge: string | null;
   isDone: boolean;
   acceptChallenge: () => void;
@@ -14,7 +15,7 @@ interface ChallengesPageProps {
 }
 
 export default function ChallengesPage({
-  setPage, completed, challengeIndex, currentChallenge, isDone,
+  setPage, completed, challengeIndex, challengeOrder, currentChallenge, isDone,
   acceptChallenge, refuseChallenge, challengeMessage, dismissChallengeMessage,
 }: ChallengesPageProps) {
   const progressPercent = (completed / CHALLENGES.length) * 100;
@@ -68,14 +69,14 @@ export default function ChallengesPage({
         <div className="challenges-history">
           <h3 className="history-title">سجل التحديات</h3>
           <div className="challenges-list">
-            {CHALLENGES.map((ch, idx) => {
-              const status = idx < completed ? "done" : idx === challengeIndex ? "current" : "locked";
+            {challengeOrder.map((originalIdx, position) => {
+              const status = position < completed ? "done" : position === challengeIndex ? "current" : "locked";
               return (
-                <div key={idx} className={`challenge-item challenge-${status}`}>
+                <div key={originalIdx} className={`challenge-item challenge-${status}`}>
                   <span className="challenge-item-num">
-                    {status === "done" ? "✓" : status === "current" ? "▶" : `${idx + 1}`}
+                    {status === "done" ? "✓" : status === "current" ? "▶" : `${position + 1}`}
                   </span>
-                  <span className="challenge-item-text">{ch}</span>
+                  <span className="challenge-item-text">{CHALLENGES[originalIdx]}</span>
                 </div>
               );
             })}

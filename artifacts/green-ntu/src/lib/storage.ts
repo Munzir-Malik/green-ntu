@@ -1,6 +1,7 @@
 const KEYS = {
   COMPLETED: "green_ntu_completed",
   CHALLENGE_INDEX: "green_ntu_challenge_index",
+  CHALLENGE_ORDER: "green_ntu_challenge_order",
   UNLOCKED_TITLE: "green_ntu_unlocked_title",
   UNLOCKED_COUNT: "green_ntu_unlocked_count",
   LAST_TIP: "green_ntu_last_tip",
@@ -20,6 +21,21 @@ export function getChallengeIndex(): number {
 
 export function setChallengeIndex(val: number): void {
   localStorage.setItem(KEYS.CHALLENGE_INDEX, String(val));
+}
+
+export function getChallengeOrder(totalChallenges: number): number[] {
+  const raw = localStorage.getItem(KEYS.CHALLENGE_ORDER);
+  if (raw) {
+    try {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length === totalChallenges) return parsed;
+    } catch { /* fall through to default */ }
+  }
+  return Array.from({ length: totalChallenges }, (_, i) => i);
+}
+
+export function setChallengeOrder(val: number[]): void {
+  localStorage.setItem(KEYS.CHALLENGE_ORDER, JSON.stringify(val));
 }
 
 export function getUnlockedTitle(): string {
